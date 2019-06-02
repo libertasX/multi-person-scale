@@ -1,0 +1,48 @@
+﻿<Window x:Class="multi_person_scale.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:multi_person_scale"
+        mc:Ignorable="d"
+        Title="Waage" Height="415" Width="740" Background="Gray">
+    <Grid>
+
+        <GroupBox Header="Waage" FontSize="20" Margin="20,10,342,100">
+            <Grid RenderTransformOrigin="0.372,0.479">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+
+
+                </Grid.ColumnDefinitions>
+                <Label x:Name="l_age" Content="Alter" Grid.Row="0" Grid.Column="0"/>
+                <Label x:Name="l_height" Content="Größe(cm)" Grid.Row="1" Grid.Column="0"/>
+                <Label x:Name="l_weight" Content="Gewicht(Kg)" Grid.Row="2" Grid.Column="0"/>
+                <Label x:Name="l_sex" Content="Geschlecht" Grid.Row="3" Grid.Column="0"/>
+                <Button x:Name="b_submit" Content="Bestätigen" Click="B_submit_Click" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,49,0"/>
+
+                <TextBox x:Name="tb_age" Grid.Row="0" Grid.Column="1" Margin="0,10,49,0" />
+                <TextBox x:Name="tb_height" Grid.Row="1" Grid.Column="1" Margin="0,10,49,0" />
+                <TextBox x:Name="tb_weight" Grid.Row="2" Grid.Column="1" Margin="0,10,49,0" />
+                <RadioButton x:Name="rb_male" Content="Mann" Grid.Row="3" Grid.Column="1" Margin="0,15,0,35" Grid.RowSpan="2" />
+                <RadioButton x:Name="rb_female" Content="Frau" Grid.Row="4" Grid.Column="1" Margin="0,5"/>
+
+
+
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+
+</Window>
