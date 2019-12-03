@@ -26,13 +26,13 @@ namespace multi_person_scale
     /// </summary>
     public partial class MainWindow : Window
     {
-        readonly SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-FLO2K4S\SQLEXPRESS;Initial Catalog=analyse;Integrated Security=True");
+        readonly SqlConnection conn = new SqlConnection(@"Data Source=your_computer_name\SQLEXPRESS;Initial Catalog=analyse;Integrated Security=True");
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void B_submit_Click(object sender, RoutedEventArgs e)
+        private void SubmitClick(object sender, RoutedEventArgs e)
         {
             // Verbindung öffnen
             conn.Open();
@@ -45,9 +45,9 @@ namespace multi_person_scale
             string sex = "";
             int errCount = 0;
 
-            if (rb_female.IsChecked == true) { sex = "f"; }
+            if (radioButtonFemale.IsChecked == true) { sex = "f"; }
 
-            else if (rb_male.IsChecked == true) { sex = "m"; }
+            else if (radioButtonMale.IsChecked == true) { sex = "m"; }
 
             else
             {
@@ -60,10 +60,10 @@ namespace multi_person_scale
             decimal d;
             float f;
 
-            if (decimal.TryParse(tb_age.Text, out d) == false | decimal.TryParse(tb_height.Text, out d) == false | float.TryParse(tb_weight.Text, out f) == false |
-                rb_female.IsChecked == false & rb_male.IsChecked == false)
+            if (decimal.TryParse(textBoxAge.Text, out d) == false | decimal.TryParse(textBoxHeight.Text, out d) == false | float.TryParse(textBoxWeight.Text, out f) == false |
+                radioButtonFemale.IsChecked == false & radioButtonMale.IsChecked == false)
             {
-                err_count = 1;
+                errCount = 1;
                 MessageBox.Show("Eingabefehler in einem der Angaben !", "Fehlermeldung", MessageBoxButton.OK, MessageBoxImage.Error);
 
 
@@ -76,15 +76,15 @@ namespace multi_person_scale
                 {
                     SqlCommand cmd = conn.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "INSERT INTO a_gewicht(id, age, height, weight, sex) VALUES('" + id + " ',' " + tb_age.Text + "','" + tb_height.Text + "','" + tb_weight.Text + "','" + sex + "')";
+                    cmd.CommandText = "INSERT INTO a_gewicht(id, age, height, weight, sex) VALUES('" + id + " ',' " + textBoxAge.Text + "','" + textBoxHeight.Text + "','" + textBoxWeight.Text + "','" + sex + "')";
                     cmd.ExecuteNonQuery();
 
                     // MessageBox.Show("Eintrag in die Datenbank war erfolgreich !", "Datenbankeintrag", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    tb_age.Clear();
-                    tb_height.Clear();
-                    tb_weight.Clear();
-                    rb_female.IsChecked = false;
-                    rb_male.IsChecked = false;
+                    textBoxAge.Clear();
+                    textBoxHeight.Clear();
+                    textBoxWeight.Clear();
+                    radioButtonFemale.IsChecked = false;
+                    radioButtonMale.IsChecked = false;
                 }
                 catch (Exception err)
                 {

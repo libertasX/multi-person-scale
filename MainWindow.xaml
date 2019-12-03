@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:multi_person_scale"
         mc:Ignorable="d"
-        Title="Waage" Height="415" Width="740" Background="Gray">
+        Title="Personenwaage" Height="415" Width="740" Background="Gray">
     <Grid>
 
         <GroupBox Header="Waage" FontSize="20" Margin="20,10,342,100">
@@ -26,17 +26,17 @@
 
 
                 </Grid.ColumnDefinitions>
-                <Label x:Name="l_age" Content="Alter" Grid.Row="0" Grid.Column="0"/>
-                <Label x:Name="l_height" Content="Größe(cm)" Grid.Row="1" Grid.Column="0"/>
-                <Label x:Name="l_weight" Content="Gewicht(Kg)" Grid.Row="2" Grid.Column="0"/>
-                <Label x:Name="l_sex" Content="Geschlecht" Grid.Row="3" Grid.Column="0"/>
-                <Button x:Name="b_submit" Content="Bestätigen" Click="B_submit_Click" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,49,0"/>
+                <Label x:Name="labelAge" Content="Alter" Grid.Row="0" Grid.Column="0"/>
+                <Label x:Name="labelHeight" Content="Größe(cm)" Grid.Row="1" Grid.Column="0"/>
+                <Label x:Name="labelWeight" Content="Gewicht(Kg)" Grid.Row="2" Grid.Column="0"/>
+                <Label x:Name="labelSex" Content="Geschlecht" Grid.Row="3" Grid.Column="0"/>
+                <Button x:Name="buttonSubmit" Content="Bestätigen" Click="SubmitClick" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,49,0"/>
 
-                <TextBox x:Name="tb_age" Grid.Row="0" Grid.Column="1" Margin="0,10,49,0" />
-                <TextBox x:Name="tb_height" Grid.Row="1" Grid.Column="1" Margin="0,10,49,0" />
-                <TextBox x:Name="tb_weight" Grid.Row="2" Grid.Column="1" Margin="0,10,49,0" />
-                <RadioButton x:Name="rb_male" Content="Mann" Grid.Row="3" Grid.Column="1" Margin="0,15,0,35" Grid.RowSpan="2" />
-                <RadioButton x:Name="rb_female" Content="Frau" Grid.Row="4" Grid.Column="1" Margin="0,5"/>
+                <TextBox x:Name="textBoxAge" Grid.Row="0" Grid.Column="1" Margin="0,10,49,0" />
+                <TextBox x:Name="textBoxHeight" Grid.Row="1" Grid.Column="1" Margin="0,10,49,0" />
+                <TextBox x:Name="textBoxWeight" Grid.Row="2" Grid.Column="1" Margin="0,10,49,0" />
+                <RadioButton x:Name="radioButtonMale" Content="Mann" Grid.Row="3" Grid.Column="1" Margin="0,15,0,35" Grid.RowSpan="2" />
+                <RadioButton x:Name="radioButtonFemale" Content="Frau" Grid.Row="4" Grid.Column="1" Margin="0,5"/>
 
 
 
