@@ -43,7 +43,7 @@ namespace multi_person_scale
 
             int id = z;
             string sex = "";
-            int err_count = 0;
+            int errCount = 0;
 
             if (rb_female.IsChecked == true) { sex = "f"; }
 
@@ -51,7 +51,7 @@ namespace multi_person_scale
 
             else
             {
-                err_count = 1;
+                errCount = 1;
                 MessageBox.Show("Eingabefehler !", "Fehlermeldung", MessageBoxButton.OK, MessageBoxImage.Error);
 
             }
@@ -70,7 +70,7 @@ namespace multi_person_scale
             }
 
             // Waren alle Eingaben richtig ?
-            if (err_count == 0) // Ja
+            if (errCount == 0) // Ja
             {
                 try
                 {
